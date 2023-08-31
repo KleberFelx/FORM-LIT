@@ -66,10 +66,11 @@ export const styles = css`
     font-weight: bold;
     border: none;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-family: "Montserrat";
     transition: all 150ms ease-in-out;
   }
+
   button:hover {
     cursor: pointer;
     background-color: #95bbf7fb;
@@ -87,37 +88,66 @@ export const styles = css`
   .colors {
     font-family: "Montserrat", sans-serif;
     background-color: white;
-    color: #1d5ab9;
-    border: 1px solid #000;
+    color: #1d59b9c7;
+    border: 1px solid #ccc;
     outline: none;
     font-size: 0.875rem;
     padding: 8px;
-    border-radius: 6px;
+    border-radius: 4px;
     font-weight: bold;
     position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  .toast {
+    position: absolute;
+    z-index: 1;
+    background-color: #ffffffde;
+    padding: 10px;
+    border-radius: 6px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 10px 0px #242424;
+  }
+
+  .toast p {
+    color: #1d5ab9;
+    font-size: 1rem;
+  }
+
+  .toast img {
+    object-fit: cover;
+    width: 20px;
+  }
+
+  .colors:checked {
+    background-color: #e1faed;
+    border: 1px solid #1fc300;
+    color: #1fc300;
   }
 
   input[type="radio"] {
     all: unset;
     position: absolute;
     inset: 0;
-    /* appearance: none; */
+    appearance: none;
   }
 
-  .colors:nth-of-type(1) {
-    font-family: "Montserrat", sans-serif;
+  .colorsSelected {
     background-color: #e1faed;
     border: 1px solid #1fc300;
     color: #1fc300;
   }
-  .colors:nth-of-type(2) {
-    font-family: "Montserrat", sans-serif;
+
+  .colorsEqual {
     background-color: #fffee0;
     border: 1px solid #b1ab00;
     color: #b1ab00;
   }
-  .colors:nth-of-type(3) {
-    font-family: "Montserrat", sans-serif;
+
+  .colorResult {
     background-color: #477cd128;
     border: 1px solid #1d5ab9;
   }
