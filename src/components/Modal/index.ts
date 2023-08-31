@@ -1,7 +1,7 @@
 import { LitElement, html } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
+import "../Toast";
 import { styles } from "./styles";
-import circle from "../../assets/check-circle.png";
 
 interface formDataProps {
   razao: string;
@@ -31,28 +31,6 @@ export class MyElement extends LitElement {
     this.formData = { ...this.formData, [name]: value };
 
     console.log(this.formData);
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-    // Acesso ao elemento usando this.shadowRoot.querySelector
-    const targetElement = this.shadowRoot?.querySelector(".toast");
-    if (targetElement instanceof HTMLElement) {
-      // Faça algo com o elemento encontrado
-      setTimeout(function () {
-        targetElement.animate(
-          [
-            { transform: "translateY(0px)" },
-            { transform: "translateX(-300px)" },
-          ],
-          {
-            duration: 3000,
-            iterations: 1
-          }
-        );
-      }, 50);
-      // targetElement.style.backgroundColor = "red";
-    }
   }
 
   render() {
@@ -100,12 +78,8 @@ export class MyElement extends LitElement {
     };
 
     return html`
+      <my-toast></my-toast>
       <div class="modal">
-        <div class="toast">
-          <img src=${circle} />
-          <p>Mensagem genérica!</p>
-        </div>
-
         <header>
           <h3>MESCLAR OFICINAS</h3>
         </header>

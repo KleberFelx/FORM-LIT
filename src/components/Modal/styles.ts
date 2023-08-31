@@ -106,10 +106,14 @@ export const styles = css`
     background-color: #ffffffde;
     padding: 10px;
     border-radius: 6px;
+    right: 0;
+    top: 0;
     gap: 10px;
     display: flex;
     align-items: center;
     box-shadow: 0px 0px 10px 0px #242424;
+    overflow: hidden;
+    margin: 30px;
   }
 
   .toast p {
@@ -154,6 +158,9 @@ export const styles = css`
 
   footer {
     margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
   }
 
   @media (max-height: 708px) {
